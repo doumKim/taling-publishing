@@ -1,61 +1,196 @@
-/*css 초기화*/
-* {margin:0; padding:0;}
+@charset 'utf-8';
 
+/*폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+/*css 초기화*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 /*body 전체를 중앙정렬시에는 width값을 지정한후 margin:0 auto 입력*/
-body {width:1000px; font-family: 'nanumgothic'; margin:0 auto;}
-
-
+#wrap {
+  width: 1000px;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0 auto;
+}
 
 /* header 영역 */
-header {height:100px;}
+header {
+  height: 100px;
+}
 
-header h1 {float:left; margin-top:30px;}
+header h1.logo {
+  float: left;
+  margin-top: 30px;
+}
 
-header nav ul {float:right;list-style:none;margin-top:40px;}
+header > nav {
+  height: 100%;
+}
+nav ul.gnb_list {
+  float: right;
+  height: 100%;
+  line-height: 100px;
+}
 
-header nav ul li {float:left;margin-left:50px;}
+ul.gnb_list > li {
+  position: relative;
+  float: left;
+  padding: 0 25px;
+  text-align: center;
+}
 
-header nav ul li a {text-decoration:none; color:#000;}
+ul.gnb_list li a {
+  text-decoration: none;
+  color: #000;
+}
 
-header nav ul li a:hover {color:#c66;}
+ul.gnb_list li a:hover {
+  color: #c66;
+}
+ul.gnb_sub_list {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: normal;
+  background-color: beige;
+  z-index: 999;
+}
 
-
+ul.gnb_sub_list li {
+  padding: 10px 0;
+}
 
 /*img slider 영역*/
-section.imgslider {width:100%; height:430px;}
+section.imgslider {
+  position: relative;
+  width: 100%;
+  height: 430px;
+}
 
-section.imgslider img {width:100%; height:100%;}
+section.imgslider ul {
+  position: relative;
+  height: 100%;
+}
 
+section.imgslider ul li {
+  position: absolute;
+  display: none;
+}
 
+section.imgslider ul li:nth-child(1) {
+  display: block;
+}
 
+section.imgslider ul li p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+}
+
+section.imgslider img {
+  display: block;
+  width: 100%;
+}
+
+section.imgslider button.slider_btn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  background-color: bisque;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+}
+
+section.imgslider button.prev {
+  left: 0;
+}
+section.imgslider button.next {
+  right: 0;
+}
 
 /*product 영역*/
-section.product {text-align:center;}
+article.product {
+  padding-bottom: 40px;
+}
+article.product > h2 {
+  font-size: 0;
+}
 
-section.product h1 {clear:both; margin-top:70px;margin-bottom:10px;}
+article.product {
+  text-align: center;
+}
 
-section.product > p {margin-bottom:40px; font-size:14px; color:#666;}
+article.product section h2 {
+  clear: both;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
 
-section.product article {float:left; width:235px; height:323px; margin-right:20px; margin-bottom:50px;}
+article.product > p {
+  margin-bottom: 40px;
+  font-size: 14px;
+  color: #666;
+}
 
-section.product article:nth-child(6) {margin:0;}
+ul.product-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-section.product article h2 {font-size:14px; margin-top:10px;}
+ul.product-list li {
+  width: 235px;
+  height: 323px;
+}
 
-section.product article p {font-size:14px;}
+article.product section h3 {
+  font-size: 14px;
+  margin-top: 10px;
+}
 
-section.product h1 span {color:#c66;}
+article.product section p {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
 
-
+article.product h2 span {
+  color: #c66;
+}
 
 /*footer 영역*/
-footer {clear:both;height:120px;}
+footer {
+  clear: both;
+}
 
-footer p {float:left;font-size:12px; color:#666; width:60%;}
+footer p {
+  float: left;
+  font-size: 12px;
+  color: #666;
+  width: 60%;
+}
 
-footer nav ul {float:right; list-style:none;}
+nav.sns ul {
+  float: right;
+  list-style: none;
+}
 
-footer nav ul li {float:left; margin-left:20px;}
+nav.sns ul li {
+  float: left;
+  margin-left: 20px;
+  transition: all 0.5s;
+}
 
-
+nav.sns ul li:hover {
+  transform: rotate(15deg);
+}
